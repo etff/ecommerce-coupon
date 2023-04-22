@@ -9,5 +9,4 @@ class EcommerceCouponApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }
