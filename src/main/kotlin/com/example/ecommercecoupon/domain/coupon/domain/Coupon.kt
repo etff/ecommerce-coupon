@@ -9,16 +9,17 @@ import jakarta.persistence.Enumerated
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 @Entity
 class Coupon(
     val name: String,
     val couponCode: String,
+    couponValue: Int,
     @Enumerated(EnumType.STRING)
     val discountType: DiscountType,
-    val startedAt: LocalDateTime,
-    val endedAt: LocalDateTime,
+    val startedAt: LocalDate,
+    val endedAt: LocalDate,
     val maxDiscount: Int,
     val expiredDays: Int,
     val countCount: Int,
@@ -26,5 +27,5 @@ class Coupon(
     val couponStatus: CouponStatus,
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long,
+    val id: Long = 0L,
 ) : BaseEntity()
